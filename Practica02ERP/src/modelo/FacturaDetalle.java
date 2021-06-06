@@ -1,20 +1,29 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package modelo;
 
 import java.io.Serializable;
-
+import java.util.Objects;
 import javax.json.bind.annotation.JsonbTransient;
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 
 /**
- * Entity implementation class for Entity: FacturaDetalle
+ * 
+ * @author jhonn
  *
  */
 @Entity
 
-public class FacturaDetalle implements Serializable {
-
-
-	private static final long serialVersionUID = 1L;
+public class FacturaDetalle implements Serializable{
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigo;
@@ -37,52 +46,90 @@ public class FacturaDetalle implements Serializable {
         this.producto = producto;
     }
 
-	public int getCodigo() {
-		return codigo;
-	}
+    
 
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
+    public Producto getProducto() {
+        return producto;
+    }
 
-	public double getSubtotal() {
-		this.subtotal = Math.round((this.cantidad*this.producto.getPrecio()) * 100.0) / 100.0;
-		return subtotal;
-	}
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+    
+    public int getCodigo() {
+        return codigo;
+    }
 
-	public void setSubtotal(double subtotal) {
-		this.subtotal = subtotal;
-	}
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
 
-	public int getCantidad() {
-		return cantidad;
-	}
+    public double getSubtotal() {
+        this.subtotal = Math.round((this.cantidad*this.producto.getPrecio()) * 100.0) / 100.0;
+        return this.subtotal;
+    }
 
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
-	}
+    public int getCantidad() {
+        return cantidad;
+    }
 
-	public FacturaCabecera getFacturaCabecera() {
-		return facturaCabecera;
-	}
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
 
-	public void setFacturaCabecera(FacturaCabecera facturaCabecera) {
-		this.facturaCabecera = facturaCabecera;
-	}
+    public FacturaCabecera getFacturaCabecera() {
+        return facturaCabecera;
+    }
 
-	public Producto getProducto() {
-		return producto;
-	}
+    public void setFacturaCabecera(FacturaCabecera facturaCabecera) {
+        this.facturaCabecera = facturaCabecera;
+    }
 
-	public void setProducto(Producto producto) {
-		this.producto = producto;
-	}
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 43 * hash + this.codigo;
+        hash = 43 * hash + Objects.hashCode(this.facturaCabecera);
+        hash = 43 * hash + Objects.hashCode(this.producto);
+        return hash;
+    }
 
-	@Override
-	public String toString() {
-		return "FacturaDetalle [codigo=" + codigo + ", subtotal=" + subtotal + ", cantidad=" + cantidad
-				+ ", facturaCabecera=" + facturaCabecera + ", producto=" + producto + "]";
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final FacturaDetalle other = (FacturaDetalle) obj;
+        if (this.codigo != other.codigo) {
+            return false;
+        }
+        if (!Objects.equals(this.facturaCabecera, other.facturaCabecera)) {
+            return false;
+        }
+        if (!Objects.equals(this.producto, other.producto)) {
+            return false;
+        }
+        return true;
+    }
+
+    
+
+    
+
+    @Override
+    public String toString() {
+        return "FacturaDetalle{" + "codigo=" + codigo + ", subtotal=" + subtotal + ", cantidad=" + cantidad +'}';
+    }
+
+    
+
+   
     
     
 }
