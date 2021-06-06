@@ -11,7 +11,7 @@
           <p:layout fullPage="true">
       
                <p:layoutUnit position="north" size="50" resizable="true" closable="true" collapsible="true">
-                    Crear Nuevo Producto
+                    Crear Categoria Producto
                 </p:layoutUnit>
               <h:form>
               <p:layoutUnit position="center">
@@ -20,15 +20,9 @@
                     <h:panelGrid columns="3">
                     <p:outputLabel value="Nombre" for="nombre" />
                     <h:inputText id="nombre" value="#{registroBeanProducto.nombre}" title="Nombre" />
-                    <p:message for="nombre"/>                    
-                    <p:outputLabel value="UnidadMedida" for="unidadMedida" />
-                    <h:inputText id="unidadMedida" value="#{registroBeanProducto.unidadMedida}" title="UnidadMedida" />
-                    <p:message for="unidadMedida"/>      
-                    <p:outputLabel value="Imagen" for="imagen" />
-                    <h:inputText id="imagen" value="#{registroBeanProducto.imagen}" title="Imagen" /> 
-                     <p:message for="imagen"/>               
-                    <p:outputLabel value="Precio" for="precio" />
-                    <h:inputText id="precio" value="#{registroBeanProducto.precio}" title="Precio" />
+                    <p:message for="nombre"/>                                 
+                    <p:outputLabel value="Descripcion" for="descripcion" />
+                    <h:inputText id="descripcion" value="#{registroBeanProducto.descripcion}" title="Descripcion" />
                      
                     
                     

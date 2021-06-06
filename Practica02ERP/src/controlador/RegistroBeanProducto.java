@@ -6,8 +6,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 
-import facade.ProductoFacade;
-import modelo.Producto;
+import ejb.CategoriaFacade;
+import modelo.Categoria;
+
 
 /**
  *
@@ -18,17 +19,20 @@ import modelo.Producto;
 public class RegistroBeanProducto {
 	private int codigo;
 	private String nombre;
-	private String unidadMedida;
-	private String imagen;
-	private double precio;
+	private String descripcion;
     @Inject
-    private ProductoFacade registrofacade;
+    private CategoriaFacade registrofacade;
 
    
-     public int getCodigo() {
+    
+	public int getCodigo() {
 		return codigo;
 	}
-
+	public List<Categoria> getProductos()
+    {
+        return this.registrofacade.findAll();
+        
+    }     
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
@@ -41,77 +45,56 @@ public class RegistroBeanProducto {
 		this.nombre = nombre;
 	}
 
-	public String getUnidadMedida() {
-		return unidadMedida;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setUnidadMedida(String unidadMedida) {
-		this.unidadMedida = unidadMedida;
-	}
-
-	public String getImagen() {
-		return imagen;
-	}
-
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
-	}
-
-	public double getPrecio() {
-		return precio;
-	}
-
-	public void setPrecio(double precio) {
-		this.precio = precio;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public String guardar()
     {
-           Producto p = new Producto();
-           p.setNombre(nombre);
-           p.setUnidadMedida(unidadMedida);
-           p.setImagen(imagen);
-           p.setPrecio(precio);
-           this.registrofacade.create(p);
-           this.codigo = p.getCodigo();
-           return "ProductoCreate";
+           Categoria c = new  Categoria();
+           c.setNombre(nombre);
+           c.setDescripcion(descripcion);
+           this.registrofacade.create(c);
+           this.codigo = c.getCodigo();
+           return "CategoriaCreate";
           
     }
        
     public String prepareList() {
-        return "ProductoLista";
+        return "CategoriaLista";
     }
     public String prepareCreate() {
-        return "ProductoCreate";
+        return "CategoriaCreate";
     }
     public String Eliminar(Long id)
     {
-        Producto p =  this.registrofacade.find(id);       
+    	 Categoria p =  this.registrofacade.find(id);       
         this.registrofacade.remove(p);
-       return "ProductoLista";
+       return "CategoriaLista";
     }
     public String Editar(Long id)
     {
-        Producto p =  this.registrofacade.find(id);       
-        this.codigo = p.getCodigo();
-        this.nombre = p.getNombre();
-        this.unidadMedida = p.getUnidadMedida();
-        this.imagen= p.getImagen();
-        this.precio = p.getPrecio();
+    	 Categoria c =  this.registrofacade.find(id);       
+        this.codigo = c.getCodigo();
+        this.nombre = c.getNombre();
+        this.descripcion= c.getDescripcion();
         
-        return "ProductoEdit";
+        
+        return "CategoriaEdit";
     }
     public String GuardarEdicion(RegistroBeanProducto bp, Long id)
     {
-       Producto p = new Producto();
-       p.setCodigo(bp.codigo);
-       p.setNombre(bp.nombre);
-       p.setUnidadMedida(bp.unidadMedida);
-       p.setImagen(bp.imagen);
-       p.setPrecio(bp.precio);
+    	 Categoria c = new  Categoria();
+       c.setCodigo(bp.codigo);
+       c.setNombre(bp.nombre);
+       c.setDescripcion(bp.descripcion);
        
-       this.registrofacade.edit(p);
-       return "ProductoLista";
+       this.registrofacade.edit(c);
+       return "CategoriaLista";
     }
     
     
