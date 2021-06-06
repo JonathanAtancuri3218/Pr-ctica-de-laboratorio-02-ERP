@@ -15,7 +15,7 @@ import modelo.Bodega;
 
 /**
  *
- * @author claum
+ * @author 
  */
 @Stateless
 public class BodegaFacade extends AbstractFacade<Bodega> {

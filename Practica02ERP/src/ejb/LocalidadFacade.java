@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author claum
+ * @author 
  */
 @Stateless
 public class LocalidadFacade extends AbstractFacade<Localidad>{

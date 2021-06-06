@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author claum
+ * @author 
  */
 @Stateless
 public class InventarioFacade extends AbstractFacade<Inventario>{

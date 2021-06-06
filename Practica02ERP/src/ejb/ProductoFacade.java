@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author criss
+ * @author 
  */
 @Stateless
 public class ProductoFacade extends AbstractFacade<Producto> {

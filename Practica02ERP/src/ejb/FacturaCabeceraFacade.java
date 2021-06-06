@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author enriq
+ * @author 
  */
 @Stateless
 public class FacturaCabeceraFacade extends AbstractFacade<FacturaCabecera>{

@@ -14,7 +14,7 @@ import modelo.Categoria;
 
 /**
  *
- * @author criss
+ * @author 
  */
 @Stateless
 public class CategoriaFacade extends AbstractFacade<Categoria> {
