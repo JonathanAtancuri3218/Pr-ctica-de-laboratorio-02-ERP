@@ -1,6 +1,9 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.List;
+
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 
 /**
@@ -21,6 +24,24 @@ public class Producto implements Serializable {
 	private String unidadMedida;
 	private String imagen;
 	private double precio;
+	
+	 @JsonbTransient
+	    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
+	    private List<FacturaDetalle> facturasDetalles;
+
+	    @JsonbTransient
+	    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
+	    private List<Inventario> inventarios;
+	    
+
+	    @ManyToOne
+	    private Categoria categoria;
+	    
+	    @JsonbTransient
+	    @Transient
+	    private boolean editable;
+
+	
 	public int getCodigo() {
 		return codigo;
 	}

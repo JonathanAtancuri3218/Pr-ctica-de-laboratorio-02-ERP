@@ -4,5 +4,14 @@
 		<class>modelo.Usuario</class>
 		<class>modelo.Producto</class>
 		<class>modelo.Categoria</class>
+		<class>modelo.Inventario</class>
+		<class>modelo.Bodega</class>
+		<class>modelo.FacturaCabecera</class>
+		<class>modelo.FacturaDetalle</class>
+		
+		<properties>
+      <property name="javax.persistence.schema-generation.database.action" value="create-or-extend-tables"/>
+    </properties>
+    
 	</persistence-unit>
 </persistence>
