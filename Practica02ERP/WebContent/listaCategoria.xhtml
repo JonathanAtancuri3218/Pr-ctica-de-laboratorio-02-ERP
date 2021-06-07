@@ -33,14 +33,14 @@
 <h:body>
 	<h3>Gestión de categorias</h3>
 	<h:form>
-		<h:dataTable value="#{categoriaBean.categorias}" var="c" styleClass="tabla"
-			headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
+		<h:dataTable value="#{categoriaBean.categorias}" var="c"
+			styleClass="tabla" headerClass="cabeceraTabla"
+			rowClasses="filaPar,filaImpar">
 			<h:column>
 				<f:facet name="header">Codigo</f:facet>#{c.codigo}</h:column>
 			<h:column>
 				<f:facet name="header">Nombre</f:facet>
-				<h:inputText value="#{c.nombre}" size="10"
-					rendered="#{c.editable}" />
+				<h:inputText value="#{c.nombre}" size="10" rendered="#{c.editable}" />
 				<h:outputText value="#{c.nombre}" rendered="#{not c.editable}" />
 			</h:column>
 			<h:column>
@@ -61,7 +61,7 @@
 					rendered="#{c.editable}" />
 			</h:column>
 		</h:dataTable>
-		
+
 	</h:form>
 </h:body>
 </html>

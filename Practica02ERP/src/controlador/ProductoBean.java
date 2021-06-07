@@ -2,13 +2,18 @@ package controlador;
 
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 
-
+import ejb.CategoriaFacade;
 import ejb.ProductoFacade;
 import modelo.Categoria;
 import modelo.Producto;
 
+
+@ManagedBean
+@RequestScoped
 public class ProductoBean {
 
 	private int codigo;
@@ -16,20 +21,25 @@ public class ProductoBean {
     private String unidadMedida;
     private String imagen;
     private double precio;
+    //clave foranea
+    private Categoria catgoria;
     @Inject
     private ProductoFacade registrofacade;
-
+    @Inject
+    private CategoriaFacade categoriafacade;
    
-    
-	public int getCodigo() {
-		return codigo;
-	}
+    public ProductoBean() {
+    	Categoria p = new Categoria();
+    }
+	
 	public List<Producto> getProductos()
     {
         return this.registrofacade.findAll();
         
     }     
-	
+	public int getCodigo() {
+		return codigo;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -58,6 +68,15 @@ public class ProductoBean {
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+	
+	public Categoria getCatgoria() {
+		return catgoria;
+	}
+
+	public void setCatgoria(Categoria catgoria) {
+		this.catgoria = catgoria;
+	}
+
 	public String guardar()
     {
            Producto c = new  Producto();
@@ -65,6 +84,7 @@ public class ProductoBean {
            c.setUnidadMedida(unidadMedida);
            c.setImagen(imagen);
            c.setPrecio(precio);
+           
            this.registrofacade.create(c);
            this.codigo = c.getCodigo();
            return "ProductoCreate";
@@ -100,12 +120,4 @@ public class ProductoBean {
        this.registrofacade.edit(c);
        return "ProductoLista";
     }
-    
-    
-    /**
-     * Creates a new instance of NewJSFManagedBean
-     */
-    public ProductoBean() {
-    }
-    
 }

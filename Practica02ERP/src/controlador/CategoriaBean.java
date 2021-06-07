@@ -90,9 +90,7 @@ public class CategoriaBean {
     }
     
     
-    /**
-     * Creates a new instance of NewJSFManagedBean
-     */
+    
     public CategoriaBean() {
     }
     

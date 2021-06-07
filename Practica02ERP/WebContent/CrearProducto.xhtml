@@ -1,54 +1,45 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>Nuevo Producto</title>
-    </h:head>
-    <h:body>
-          <p:layout fullPage="true">
-      
-               <p:layoutUnit position="north" size="50" resizable="true" closable="true" collapsible="true">
-                    Crear Categoria Producto
-                </p:layoutUnit>
-              <h:form>
-              <p:layoutUnit position="center">
-        
-                 
-                    <h:panelGrid columns="3">
-                    <p:outputLabel value="Nombre" for="nombre" />
-                    <h:inputText id="nombre" value="#{registroBeanProducto.nombre}" title="Nombre" />
-                    <p:message for="nombre"/>                    
-                    <p:outputLabel value="UnidadMedida" for="unidadMedida" />
-                    <h:inputText id="unidadMedida" value="#{registroBeanProducto.unidadMedida}" title="UnidadMedida" />
-                    <p:message for="unidadMedida"/>      
-                    <p:outputLabel value="Imagen" for="imagen" />
-                    <h:inputText id="imagen" value="#{registroBeanProducto.imagen}" title="Imagen" /> 
-                     <p:message for="imagen"/>               
-                    <p:outputLabel value="Precio" for="precio" />
-                    <h:inputText id="precio" value="#{registroBeanProducto.precio}" title="Precio" />
-                     
-                    
-                    
-                  
-                </h:panelGrid>
-                   </p:layoutUnit>
-                <p:layoutUnit position="south" size="50" closable="true" collapsible="true">
-                 <h:panelGrid columns="2">
-                   <p:outputLabel value="Id" for="codigo" />
-                    <p:outputLabel id="codigo" value="#{registroBeanProducto.codigo}" title="Id"  />
-                     <h:commandButton id="registroCommand" value="Guardar" action="#{registroBeanProducto.guardar()}"/>
-                <h:commandButton id="registroCommand1" value="Ir a Lista" action="#{registroBeanProducto.prepareList()}"/>
-                  </h:panelGrid>   
-                      </p:layoutUnit>
-               
-        </h:form>  
-           
-                   
-                    
-              
-            </p:layout>
-    </h:body>
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Nuevo Producto</title>
+</h:head>
+<h:body>
+		<h:form id="fa">
+			
+				<h:panelGrid columns="2">
+					<p:outputLabel value="Nombre"/>
+					<h:inputText  value="#{productoBean.nombre}"  requiered="true" />
+					
+					<p:outputLabel value="UnidadMedida"/>
+					<h:inputText value="#{productoBean.unidadMedida}"  requiered="true" />
+					
+					<p:outputLabel value="Imagen"/>
+					<h:inputText  value="#{productoBean.imagen}" requiered="true" />
+					
+					<p:outputLabel value="Precio"/>
+					<h:inputText  value="#{productoBean.precio}" requiered="true" />
+					<p:outputLabel value="CategoriaId"  />
+					<p:selectOneMenu validator="#{productoBean.catgoria.codigo}" >
+					<f:selectItem  var ="c"  value="#{categoriaBean.categorias}" itemLabel="#{categoriaBean.nombre}" itemValue="#{categoriaBean.codigo}"/>
+					
+                    </p:selectOneMenu>
+				</h:panelGrid>
+			
+				<h:panelGrid columns="2">
+					<p:outputLabel value="Id" for="codigo" />
+					<p:outputLabel id="codigo" value="#{ProductoBean.codigo}"
+						title="Id" />
+					<h:commandButton id="registroCommand" value="Guardar"
+						action="#{productoBean.guardar()}" />
+					<h:commandButton id="registroCommand1" value="Ir a Lista"
+						action="#{productoBean.prepareList()}" />
+				</h:panelGrid>
+			
+		</h:form>
+
+</h:body>
 </html>
