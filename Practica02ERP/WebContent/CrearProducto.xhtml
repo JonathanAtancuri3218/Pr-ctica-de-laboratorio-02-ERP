@@ -19,12 +19,16 @@
                  
                     <h:panelGrid columns="3">
                     <p:outputLabel value="Nombre" for="nombre" />
-                    <h:inputText id="nombre" value="#{categoriaBean.nombre}" title="Nombre" />
-                    <p:message for="nombre"/>  
-                                 
-                    <p:outputLabel value="Descripcion" for="descripcion" />
-                    
-                    <h:inputText id="descripcion" value="#{categoriaBean.descripcion}" title="Descripcion" />
+                    <h:inputText id="nombre" value="#{registroBeanProducto.nombre}" title="Nombre" />
+                    <p:message for="nombre"/>                    
+                    <p:outputLabel value="UnidadMedida" for="unidadMedida" />
+                    <h:inputText id="unidadMedida" value="#{registroBeanProducto.unidadMedida}" title="UnidadMedida" />
+                    <p:message for="unidadMedida"/>      
+                    <p:outputLabel value="Imagen" for="imagen" />
+                    <h:inputText id="imagen" value="#{registroBeanProducto.imagen}" title="Imagen" /> 
+                     <p:message for="imagen"/>               
+                    <p:outputLabel value="Precio" for="precio" />
+                    <h:inputText id="precio" value="#{registroBeanProducto.precio}" title="Precio" />
                      
                     
                     
@@ -34,9 +38,9 @@
                 <p:layoutUnit position="south" size="50" closable="true" collapsible="true">
                  <h:panelGrid columns="2">
                    <p:outputLabel value="Id" for="codigo" />
-                    <p:outputLabel id="codigo" value="#{categoriaBean.codigo}" title="Id"  />
-                     <h:commandButton id="registroCommand" value="Guardar" action="#{categoriaBean.guardar()}"/>
-                
+                    <p:outputLabel id="codigo" value="#{registroBeanProducto.codigo}" title="Id"  />
+                     <h:commandButton id="registroCommand" value="Guardar" action="#{registroBeanProducto.guardar()}"/>
+                <h:commandButton id="registroCommand1" value="Ir a Lista" action="#{registroBeanProducto.prepareList()}"/>
                   </h:panelGrid>   
                       </p:layoutUnit>
                

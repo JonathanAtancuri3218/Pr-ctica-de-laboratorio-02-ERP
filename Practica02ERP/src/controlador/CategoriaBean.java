@@ -1,7 +1,7 @@
 package controlador;
 
-
 import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
@@ -10,13 +10,9 @@ import ejb.CategoriaFacade;
 import modelo.Categoria;
 
 
-/**
- *
- * @author 
- */
 @ManagedBean
 @RequestScoped
-public class RegistroBeanProducto {
+public class CategoriaBean {
 	private int codigo;
 	private String nombre;
 	private String descripcion;
@@ -28,7 +24,7 @@ public class RegistroBeanProducto {
 	public int getCodigo() {
 		return codigo;
 	}
-	public List<Categoria> getProductos()
+	public List<Categoria> getCategorias()
     {
         return this.registrofacade.findAll();
         
@@ -70,23 +66,19 @@ public class RegistroBeanProducto {
     public String prepareCreate() {
         return "CategoriaCreate";
     }
-    public String Eliminar(Long id)
+    public String Eliminar(Categoria c)
     {
-    	 Categoria p =  this.registrofacade.find(id);       
-        this.registrofacade.remove(p);
-       return "CategoriaLista";
+    	registrofacade.remove(c);
+    	 
+    	registrofacade.findAll();
+    	return null;
     }
-    public String Editar(Long id)
+    public String Editar(Categoria c)
     {
-    	 Categoria c =  this.registrofacade.find(id);       
-        this.codigo = c.getCodigo();
-        this.nombre = c.getNombre();
-        this.descripcion= c.getDescripcion();
-        
-        
-        return "CategoriaEdit";
+    	c.setEditable(true);
+        return null;
     }
-    public String GuardarEdicion(RegistroBeanProducto bp, Long id)
+    public String GuardarEdicion(CategoriaBean bp, Long id)
     {
     	 Categoria c = new  Categoria();
        c.setCodigo(bp.codigo);
@@ -101,7 +93,7 @@ public class RegistroBeanProducto {
     /**
      * Creates a new instance of NewJSFManagedBean
      */
-    public RegistroBeanProducto() {
+    public CategoriaBean() {
     }
     
 }
