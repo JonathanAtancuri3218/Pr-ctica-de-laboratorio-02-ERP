@@ -26,6 +26,7 @@ Creamos el README.md es el archivo que incluirá toda la información que este e
 ![image](https://user-images.githubusercontent.com/49213346/121192436-904fc900-c832-11eb-9533-90c030bca139.png)
 
 Inicializamos de forma local
+
 ![image](https://user-images.githubusercontent.com/49213346/121192451-9645aa00-c832-11eb-852c-b8c12b9124bf.png)
 
 Agregamos el archivo necesario que vamos a utilizar para poder subir cambios y luego realizamos algún cambio , nos posicionamos en la rama main y fusionamos cambios y luego los subimos con git push -u origin main
