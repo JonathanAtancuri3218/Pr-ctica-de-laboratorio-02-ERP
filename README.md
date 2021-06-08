@@ -13,6 +13,7 @@ OBJETIVO ALCANZADO:
 Diseña y desarrolla modelos de software en diferentes niveles de abstracción y modelos de datos a nivel transaccional y analítico con entornos de desarrollo actuales.
 ACTIVIDADES DESARROLLADAS
 1. Crear un repositorio en GitHub con el nombre “Práctica de laboratorio 02: ERP”
+![image](https://user-images.githubusercontent.com/49213346/121192303-6dbdb000-c832-11eb-9914-6719e67c4e00.png)
 Primero Creamos un repositorio con el nombre Práctica de laboratorio 02: ERP
 Vemos el repositorio creado y es hora de fusionar el repositorio de forma local
 Informe de Prácticas de Laboratorio
