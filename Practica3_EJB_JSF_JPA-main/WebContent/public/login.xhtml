@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="/WEB-INF/include/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="head">
+        <f:event type="preRenderView" listener="#{loginBean.checkLogin('login')}" />
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"></link>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet"></link>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
+        <title>Login</title>
+        <h:outputStylesheet name="css/login/login.css"/>
+    </ui:define>
+
+
+    <ui:define name="body">
+    
+    <header>
+            <nav class="navbar navbar-expand-lg navbar-dark gris row scrolling-navbar fixed-top">
+                <!-- logo -->
+
+                <div class="col-xs-9 col-sm-8 col-md-4 col-mg-4 letter">
+                    <a href="index.xhtml" id="prin">
+                        <img src="http://localhost:8080/Practica3_EJB_JSF_JPA/resources/img/II.png" height="55px" width="305px"/>
+                    </a>
+                </div>
+
+
+                <!-- Datos extras -->
+
+                <ul class="nav navbar-nav nav-flex-icons ml-auto  mr-sm-2">
+                    <li class="nav-item">
+                        <h:link class="nav-login text-white" id="mi-cuenta" outcome="admin" rendered="#{loginBean.isLogin()}">
+                            <i style="font-size: 17px;" class="fa fa-user"></i>
+                            <span class="clearfix d-none d-sm-inline-block ml-2" style="font-size: 17px;">Mi Cuenta</span>
+                        </h:link>  
+
+                    </li>
+                </ul>
+                <div id="butyn">
+                	<a href="http://localhost:8080/Practica3_EJB_JSF_JPA/public/login.xhtml">Iniciar Sesion</a>
+                </div>
+            </nav>
+        </header>
+    
+    
+    
+    
+
+        <div class="container col-lg-3" style="width: 400px; height: 450px">
+
+            <input class="form-control" type="hidden" name="inicio" value="inicio"/>
+
+            <h:form class="d-flex flex-column align-items-center">
+                <div class="form-group text-center w-100">
+                    <h:graphicImage name="img/formLogin.png" alt="UserLogo" height="80" width="80" style="margin-top: 30px"/>
+                    <p>
+                        <strong class="l">Login</strong>
+                    </p>
+                </div>
+
+                <div class="form-group w-100">
+                    <i class="fas fa-at"></i> <label class="e">E-mail:</label> 
+                    <h:inputText id="txtEmail"
+                                 class="form-control" 
+                                 a:placeholder="E-mail" 
+                                 value="#{loginBean.correo}" 
+                                 required="true" 
+                                 validatorMessage="#{loginBean.correo} no es un correo valido">
+                        <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+                    </h:inputText>
+
+                </div>
+                <div class="form-group w-100">
+                    <i class="fas fa-unlock"></i> <label class="e">Password:</label> 
+                    <h:inputSecret class="form-control" 
+                                   required="true"
+                                   a:placeholder="Password"
+                                   value="#{loginBean.password}" />
+                </div>
+                <p:messages class="w-100" id="messages" showDetail="true" showIcon="false" closable="true">
+                    <p:autoUpdate />   
+                </p:messages>
+
+
+                <p:commandButton  class="btn btn-danger w-100"
+                                  value="Iniciar Sesion" 
+                                  update="messages"
+                                  action="#{loginBean.login()}" />
+
+            </h:form>
+        </div>
+
+    </ui:define>
+</ui:composition>

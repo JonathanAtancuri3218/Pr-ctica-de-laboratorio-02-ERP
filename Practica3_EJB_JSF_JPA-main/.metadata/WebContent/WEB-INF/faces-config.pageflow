@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16103861585490" configfile="/Practica3_EJB_JSF_JPA/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="2098" id="pf16104043530840" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf16104238442561 pf16104791048210" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="public/login.xhtml" x="122" y="2290" id="pf16104043530854" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf16104791048210 pf16104791048221 pf16104791048222" inlinks="pf16104791048221" path="/public/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/index.xhtml" x="338" y="2482" id="pf16104043530855" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" inlinks="pf16104238442565 pf16104791048222 pf16104791048223" path="/admin/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="inicio/*" x="122" y="466" id="pf16104238442566" referenceLink="//@navigationRule.0/@fromViewId|" path="/inicio/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="empleado/index.xhtml" x="122" y="1138" id="pf16104238442567" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf16104238442561 pf16104238442568 pf16104238442569 pf161042384425610 pf161042384425611 pf161042384425612 pf161042384425613" inlinks="pf16104238442568" path="/empleado/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="empleado/cliente.xhtml" x="338" y="178" id="pf161042384425614" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" inlinks="pf16104238442569" path="/empleado/cliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="empleado/facturas.xhtml" x="338" y="562" id="pf161042384425615" referenceLink="//@navigationRule.1/@navigationCase.3/@toViewId|" inlinks="pf161042384425610" path="/empleado/facturas.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="empleado/nuevaFactura.xhtml" x="338" y="946" id="pf161042384425616" referenceLink="//@navigationRule.1/@navigationCase.4/@toViewId|" inlinks="pf161042384425611" path="/empleado/nuevaFactura.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="empleado/pedidos.xhtml" x="338" y="1330" id="pf161042384425617" referenceLink="//@navigationRule.1/@navigationCase.5/@toViewId|" inlinks="pf161042384425612" path="/empleado/pedidos.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="empleado/micuenta.xhtml" x="338" y="1714" id="pf161042384425618" referenceLink="//@navigationRule.1/@navigationCase.6/@toViewId|" inlinks="pf161042384425613" path="/empleado/micuenta.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/*" x="122" y="3250" id="pf161042384425619" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf16104238442565 pf161042384425620 pf161042384425621 pf161042384425622 pf161042384425623 pf161042384425624 pf16104791048223" path="/admin/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/producto.xhtml" x="338" y="2866" id="pf161042384425625" referenceLink="//@navigationRule.2/@navigationCase.2/@toViewId|" inlinks="pf161042384425620" path="/admin/producto.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/bodega.xhtml" x="338" y="3250" id="pf161042384425626" referenceLink="//@navigationRule.2/@navigationCase.3/@toViewId|" inlinks="pf161042384425621" path="/admin/bodega.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/categoria.xhtml" x="338" y="3634" id="pf161042384425627" referenceLink="//@navigationRule.2/@navigationCase.4/@toViewId|" inlinks="pf161042384425622" path="/admin/categoria.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/empleados.xhtml" x="338" y="4018" id="pf161042384425628" referenceLink="//@navigationRule.2/@navigationCase.5/@toViewId|" inlinks="pf161042384425623" path="/admin/empleados.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/micuenta.xhtml" x="338" y="4402" id="pf161042384425629" referenceLink="//@navigationRule.2/@navigationCase.6/@toViewId|" inlinks="pf161042384425624" path="/admin/micuenta.xhtml"/>
+  <links id="pf16104238442561" target="pf16104043530840" source="pf16104238442567" outcome="home"/>
+  <links id="pf16104238442569" target="pf161042384425614" source="pf16104238442567" outcome="cliente"/>
+  <links id="pf161042384425610" target="pf161042384425615" source="pf16104238442567" outcome="facturas"/>
+  <links id="pf161042384425611" target="pf161042384425616" source="pf16104238442567" outcome="nuevaFactura"/>
+  <links id="pf161042384425612" target="pf161042384425617" source="pf16104238442567" outcome="pedidos"/>
+  <links id="pf161042384425613" target="pf161042384425618" source="pf16104238442567" outcome="micuenta"/>
+  <links id="pf16104238442565" target="pf16104043530855" source="pf161042384425619" outcome="home"/>
+  <links id="pf161042384425620" target="pf161042384425625" source="pf161042384425619" outcome="producto"/>
+  <links id="pf161042384425621" target="pf161042384425626" source="pf161042384425619" outcome="bodega"/>
+  <links id="pf161042384425622" target="pf161042384425627" source="pf161042384425619" outcome="categoria"/>
+  <links id="pf161042384425623" target="pf161042384425628" source="pf161042384425619" outcome="empleados"/>
+  <links id="pf161042384425624" target="pf161042384425629" source="pf161042384425619" outcome="micuenta"/>
+  <links id="pf16104791048210" target="pf16104043530840" source="pf16104043530854" outcome="inicio"/>
+  <links id="pf16104791048222" target="pf16104043530855" source="pf16104043530854" outcome="admin"/>
+  <links id="pf16104791048223" target="pf16104043530855" source="pf161042384425619" outcome="admin"/>
+  <links id="pf16104238442568" target="pf16104238442567" source="pf16104238442567" outcome="empleado">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf16104791048221" target="pf16104043530854" source="pf16104043530854" outcome="login">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+</pageflow:Pageflow>

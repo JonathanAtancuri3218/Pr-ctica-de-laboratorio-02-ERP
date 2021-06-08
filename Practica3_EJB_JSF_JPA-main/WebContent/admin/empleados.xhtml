@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:define name="content">
+
+
+        <div class="breadcrumbs">
+            <c:if test="#{!loginBean.userLogin().cambioPassword}">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Su contraseña es insegura</strong> Cambie su contraseña por defecto. visite
+                    <h:link outcome="micuenta" >
+                        aquí para cambiar su contraseña
+                    </h:link>
+
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </c:if>
+            
+
+        <div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+
+
+                    <c:forEach var="e" items="#{empleadosBean.usuarios}">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="mx-auto d-block">
+                                        <h:graphicImage class="rounded-circle mx-auto d-block" name="img/admin.jpg" alt="Card image cap"/>
+
+                                        <h5 class="text-sm-center mt-2 mb-1">#{e.nombre} #{e.apellido}</h5>
+                                        <p class="text-sm-center mt-2">#{e.correo}</p>
+                                        <div class="location text-sm-center">
+                                            <c:forEach var="l" items="#{e.localidades}">
+                                                <i class="fas fa-map-marker-alt"></i> #{l.pais}, #{l.provincia}, #{l.ciudad}, #{l.direccion}
+                                            </c:forEach>
+
+                                        </div>
+                                    </div>
+                                    <hr></hr>
+                                    <div class="card-text text-sm-center">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between">
+                                    <strong class="card-title mb-3">Cuenta</strong>
+                                    <h:form>
+                                        <h:commandButton rendered="#{e.activo}" class="btn btn-danger" value="Eliminar" action="#{empleadosBean.eliminar(e)}"/>
+                                        <h:commandButton rendered="#{!e.activo}" class="btn btn-warning" value="Activar" action="#{empleadosBean.actiivar(e)}"/>
+                                    </h:form>
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
+
+
+                </div>
+            </div><!-- .animated -->
+        </div>  
+
+    </ui:define>
+
+</ui:composition>
+

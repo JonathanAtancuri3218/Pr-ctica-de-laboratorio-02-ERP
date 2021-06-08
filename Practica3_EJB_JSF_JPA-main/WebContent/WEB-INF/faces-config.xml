@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+    version="2.3">
+    
+    <application>
+        <resource-handler>
+            org.omnifaces.resourcehandler.UnmappedResourceHandler
+        </resource-handler>
+    </application>
+
+	
+	
+	
+	
+	<navigation-rule>
+ 		<from-view-id>/public/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>inicio</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/public/login.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>admin</from-outcome>
+            <to-view-id>/admin/index.xhtml</to-view-id>
+        </navigation-case>		
+    </navigation-rule>
+    
+    
+    
+    <navigation-rule>
+        
+        <from-view-id>/empleado/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>empleado</from-outcome>
+            <to-view-id>/empleado/index.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>cliente</from-outcome>
+            <to-view-id>/empleado/cliente.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>facturas</from-outcome>
+            <to-view-id>/empleado/facturas.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>nuevaFactura</from-outcome>
+            <to-view-id>/empleado/nuevaFactura.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>pedidos</from-outcome>
+            <to-view-id>/empleado/pedidos.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>micuenta</from-outcome>
+            <to-view-id>/empleado/micuenta.xhtml</to-view-id>
+        </navigation-case>	
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/admin/*</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/admin/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>admin</from-outcome>
+            <to-view-id>/admin/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>producto</from-outcome>
+            <to-view-id>/admin/producto.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>bodega</from-outcome>
+            <to-view-id>/admin/bodega.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>categoria</from-outcome>
+            <to-view-id>/admin/categoria.xhtml</to-view-id>
+        </navigation-case>	
+        <navigation-case>
+            <from-outcome>empleados</from-outcome>
+            <to-view-id>/admin/empleados.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>micuenta</from-outcome>
+            <to-view-id>/admin/micuenta.xhtml</to-view-id>
+        </navigation-case>	
+    </navigation-rule>
+
+</faces-config>
