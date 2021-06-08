@@ -1,4 +1,4 @@
-# Pr-ctica-de-laboratorio-02-ERP
+# Pr-ctica-de-laboratorio-03-ERP
 Informe de Prácticas de Laboratorio
 Carrera: Ingeniería de Sistemas
 Grupo: D Nivel: 10 Fecha: 08/06/2021
