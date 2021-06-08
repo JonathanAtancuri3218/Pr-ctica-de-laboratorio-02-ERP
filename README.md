@@ -13,25 +13,32 @@ OBJETIVO ALCANZADO:
 Diseña y desarrolla modelos de software en diferentes niveles de abstracción y modelos de datos a nivel transaccional y analítico con entornos de desarrollo actuales.
 ACTIVIDADES DESARROLLADAS
 1. Crear un repositorio en GitHub con el nombre “Práctica de laboratorio 02: ERP”
-![image](https://user-images.githubusercontent.com/49213346/121192303-6dbdb000-c832-11eb-9914-6719e67c4e00.png)
+
 Primero Creamos un repositorio con el nombre Práctica de laboratorio 02: ERP
+![image](https://user-images.githubusercontent.com/49213346/121192303-6dbdb000-c832-11eb-9914-6719e67c4e00.png)
 Vemos el repositorio creado y es hora de fusionar el repositorio de forma local
+![image](https://user-images.githubusercontent.com/49213346/121192397-86c66100-c832-11eb-9884-edc4ca498a8e.png)
+
 Informe de Prácticas de Laboratorio
 Carrera: Ingeniería de Sistemas
 Grupo: D Nivel: 10 Fecha: 08/06/2021
 Creamos el README.md es el archivo que incluirá toda la información que este en este informe
+![image](https://user-images.githubusercontent.com/49213346/121192436-904fc900-c832-11eb-9533-90c030bca139.png)
+
 Inicializamos de forma local
+![image](https://user-images.githubusercontent.com/49213346/121192451-9645aa00-c832-11eb-852c-b8c12b9124bf.png)
+
 Agregamos el archivo necesario que vamos a utilizar para poder subir cambios y luego realizamos algún cambio , nos posicionamos en la rama main y fusionamos cambios y luego los subimos con git push -u origin main
-Informe de Prácticas de Laboratorio
-Carrera: Ingeniería de Sistemas
-Grupo: D Nivel: 10 Fecha: 08/06/2021
+![image](https://user-images.githubusercontent.com/49213346/121192501-a2316c00-c832-11eb-82c0-0b35d3811fd3.png)
+
+
 Podemos ver los cambios subidos
+![image](https://user-images.githubusercontent.com/49213346/121192593-b7a69600-c832-11eb-998d-b5f67ba42245.png)
+
 2. Desarrollar una aplicación con tecnología JEE para gestionar la facturación de una distribuidora de productos para el hogar en la web.
 Se pide desarrollar una aplicación JEE usando JSF, EJB y JPA. La aplicación WEB permite realizar la facturación de una distribuidora de productos para el hogar. La distribuidora cuenta con varios productos que se encuentran almacenados en diferentes bodegas ubicadas geográficamente a lo largo del país.
 Diagrama entidad Relación
-Informe de Prácticas de Laboratorio
-Carrera: Ingeniería de Sistemas
-Grupo: D Nivel: 10 Fecha: 08/06/2021
+
 Fig.1. Diagrama Entidad Relación de una Distribuidora de productos
 Vamos a implementar el patrón JPA + EJB +JSF, primero comenzamos configurando el pool y también el resources desde el panel de administración del servidor GlassFish, configuramos la conexión a la base de datos
 Informe de Prácticas de Laboratorio
